@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex')
-
+const port1=process.env.PORT;
 const db = knex({
   // Enter your own database information here based on what you created
   client: 'pg',
@@ -95,6 +95,6 @@ app.put('/image', (req, res) => {
   .catch(err => res.status(400).json('unable to get entries'))
 })
 
-app.listen( ()=> {
+app.listen(port1,()=> {
   console.log('API Running');
 })
