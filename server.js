@@ -43,9 +43,9 @@ app.post('/signin', (req, res) => {
 
 app.post('/register', (req, res) => {
   const { email, name, password } = req.body;
-  console.log(email);
-  console.log(name);
-  console.log(password);
+  console.log(req.body.email);
+  console.log(req.body.name);
+  console.log(req.body.password);
   const hash = bcrypt.hashSync(password);
     db.transaction(trx => {
       trx.insert({
