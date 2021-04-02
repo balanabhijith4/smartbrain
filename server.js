@@ -14,7 +14,7 @@ const db = knex({
 });
 
 const app = express();
-
+console.log(db);
 app.use(cors())
 app.use(bodyParser.json());
 
