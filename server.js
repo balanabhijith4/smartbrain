@@ -1,4 +1,4 @@
-const express = require('express');
+,const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
@@ -20,7 +20,7 @@ app.use(cors())
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> {
-  console.log(db.users);
+  res.send(db.users);
 })
 
 app.post('/signin', (req, res) => {
